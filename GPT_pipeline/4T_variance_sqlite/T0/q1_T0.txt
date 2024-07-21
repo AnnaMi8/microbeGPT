@@ -1,0 +1,80 @@
+1
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+2
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+3
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+4
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+5
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+6
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+7
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+8
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+9
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+
+10
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Faecalibacterium'
+  AND t.species = 'Faecalibacterium prausnitzii';
+

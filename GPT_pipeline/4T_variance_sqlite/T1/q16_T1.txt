@@ -1,0 +1,112 @@
+1
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_column_name = 'country'
+AND m.metadata_variable_content = 'western';
+
+2
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+  AND m.metadata_column_name = 'country'
+  AND m.metadata_variable_content = 'western';
+
+3
+-- Using JOIN to get the required data from multiple tables
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species -- join with taxonomy to retrieve the family of the species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id -- join with HealthyStoolSamples to retrieve only healthy stool samples
+WHERE t.family = 'Prevotellaceae'  -- filter for Prevotellaceae family
+AND m.metadata_variable_content = 'western'; -- filter for western population;
+
+4
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS h ON a.sample_id = h.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae';
+
+5
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+        AND metadata_variable_content = 'western'
+  ) 
+  AND t.family = 'Prevotellaceae';
+
+6
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_column_name = 'country'
+AND m.metadata_variable_content = 'western';
+
+7
+SELECT AVG(count)
+FROM abundance AS a 
+JOIN taxonomy AS t ON a.species = t.species
+JOIN metadata AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae' 
+AND m.metadata_column_name = 'disease' 
+AND m.metadata_variable_content = 'healthy' 
+AND m.sample_id IN (
+    SELECT sample_id 
+    FROM metadata 
+    WHERE metadata_column_name = 'country' 
+    AND metadata_variable_content = 'western'
+) 
+AND m.sample_id IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'body_site'
+      AND metadata_variable_content = 'stool'
+) ;
+
+8
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_variable_content = 'Western';
+
+9
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae' 
+  AND m.metadata_variable_content = 'western';
+
+10
+SELECT AVG(count)
+FROM abundance AS a
+JOIN metadata AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+  AND m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content = 'healthy'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+        AND metadata_variable_content LIKE '%Western%'
+  );
+

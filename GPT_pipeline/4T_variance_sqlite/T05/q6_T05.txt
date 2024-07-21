@@ -1,0 +1,48 @@
+1
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+2
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+3
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+4
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+5
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+6
+SELECT AVG(total_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS total_species
+    FROM abundance
+    GROUP BY sample_id
+) AS species_count;
+
+7
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+8
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM abundance
+    GROUP BY sample_id
+) AS species_counts;
+
+9
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+
+10
+SELECT AVG(COUNT(DISTINCT species))
+FROM abundance;
+

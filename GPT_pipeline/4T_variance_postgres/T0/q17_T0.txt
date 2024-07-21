@@ -1,0 +1,50 @@
+1
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+2
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+3
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+4
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+5
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+6
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+7
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+8
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+9
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+
+10
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.study_condition) AS num_conditions
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.disease != 'healthy';
+

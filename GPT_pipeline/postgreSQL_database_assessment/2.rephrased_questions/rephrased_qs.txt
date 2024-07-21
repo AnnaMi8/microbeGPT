@@ -1,0 +1,20 @@
+What is the distribution of the species Faecalibacterium prausnitzii in healthy reference?
+What is the distribution(average level) of faecalibacterium prausnitzii in the database?
+How many species have the histamine pathway (BioCyc ID: PWY-6173)?
+How many samples belong to healthy patients?
+How many samples are from vagina and to how many different studies they belong?
+How many species have a sample, on average? Calculate average abundance per each sample, excluding species where count is zero because it means they are not present in that sample.
+Calculate average abundance of Firmicutes in each healthy stool sample, then calculate an overall average of all these averages to get a mean value over samples.
+Looking for reference range for Helicobacter pylori in stool samples from Healthy patients. Is it 0-0? The range means the minimum and the maximum value.
+What are the most abundant species in non-healthy samples?
+What is the distribution (average level) of the sum of the species that have histamine pathway (PWY-6173) in healthy stool samples? Look for species that possess pathway PWY- 6173, find those in abundance and calculate the average abundance of these species in each sample, then calculate an average of averages.
+What are the most three abundant species that belong to healthy samples and possess histamine pathway PWY-6173?
+What's the average abundance of Bacteroides in the healthy samples from stool? Calculate average abundance of Bacteroides in each healthy stool sample, then calculate an overall average of all these averages to get a mean value over samples.
+How many species are associated with specific polyamine pathway (PWY-6305) in healthy stool samples? Count how many species possess this pathway.
+Are there any bacteria that belong to Lentisphaerae (Phylum section) in healthy stool samples? If so, how many?
+What is the most abundant phylum in healthy stool samples?
+What is the average value of Prevotellaceae in healthy stool samples  in western population? Calculate first an average value per sample and then the average of the averages.
+How many non-healthy samples are there and how many different conditions do they belong to?
+GABA degradation pathway (4AMINOBUTMETAB-PWY): how many species possess it?
+What is the average level of Lactobacilli in healthy stool samples? Calculate first an average value per sample and then the average of the averages.
+What is the most abundant family in healthy stool samples?

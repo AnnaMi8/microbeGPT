@@ -1,0 +1,92 @@
+1
+SELECT COUNT(DISTINCT c.species) 
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN abundance AS a ON a.species = c.species 
+JOIN HealthyStoolSamples AS h ON a.sample_id = h.sample_id
+WHERE p.pathway = 'PWY-6305';
+
+2
+SELECT COUNT(DISTINCT c.species) AS num_species
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6305';
+
+3
+SELECT COUNT(DISTINCT c.species)
+FROM pathway AS p
+JOIN reactions AS r ON p.rxnid = r.rxnid
+JOIN chocophlan AS c ON r.uniref90 = c.uniref90
+JOIN abundance AS a ON c.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE p.pathway = 'PWY-6305';
+
+4
+SELECT COUNT(DISTINCT c.species) 
+FROM chocophlan AS c 
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS m ON i.ip_id = m.sample_id
+WHERE p.pathway = 'PWY-6305';
+
+5
+SELECT COUNT(DISTINCT ch.species)
+FROM chocophlan AS ch
+JOIN reactions AS r ON ch.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS ip ON p.pathway = ip.pathway
+JOIN abundance AS a ON ch.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE ip.pathway = 'PWY-6305';
+
+6
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN reactions AS r ON a.species = r.species
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE p.pathway = 'PWY-6305';
+
+7
+SELECT COUNT(DISTINCT c.species) AS species_count
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS s ON s.sample_id = i.ip_id
+WHERE p.pathway = 'PWY-6305';
+
+8
+SELECT COUNT(DISTINCT c.species)
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE i.pathway = 'PWY-6305';
+
+9
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS m ON i.ip_id = m.sample_id
+WHERE p.pathway = 'PWY-6305' ;
+
+10
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS m ON i.ip_id = m.sample_id
+WHERE p.pathway = 'PWY-6305';
+

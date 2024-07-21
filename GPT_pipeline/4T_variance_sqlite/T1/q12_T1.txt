@@ -1,0 +1,76 @@
+1
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON t.species = a.species
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+  AND t.genus = 'Bacteroides';
+
+2
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+3
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Bacteroides';
+
+4
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Bacteroides';
+
+5
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+6
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+7
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+8
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+9
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+
+10
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Bacteroides';
+

@@ -1,0 +1,82 @@
+1
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_column_name = 'country'
+AND m.metadata_variable_content = 'western';
+
+2
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_column_name = 'country'
+AND m.metadata_variable_content = 'western';
+
+3
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_variable_content = 'western';
+
+4
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+  AND m.metadata_column_name = 'country'
+  AND m.metadata_variable_content = 'western';
+
+5
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_variable_content = 'western';
+
+6
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae' AND m.metadata_variable_content = 'western';
+
+7
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_variable_content = 'western';
+
+8
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+AND m.metadata_variable_content LIKE '%western%';
+
+9
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+  AND m.metadata_variable_content = 'western';
+
+10
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae'
+  AND m.metadata_variable_content = 'western';
+

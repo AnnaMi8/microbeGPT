@@ -1,0 +1,61 @@
+1
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+    AND metadata_variable_content = 'healthy';
+
+2
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease' AND metadata_variable_content = 'healthy';
+
+3
+To calculate the number of samples that belong to healthy patients, we can use the metadata table and filter by 'disease' column to get the samples from healthy patients.
+
+Here is the SQL query:
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+AND metadata_variable_content = 'healthy';
+
+4
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+5
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy';
+
+6
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy';
+
+7
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata
+WHERE metadata_column_name = 'disease' AND metadata_variable_content = 'healthy';
+
+8
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+9
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+10
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy';
+

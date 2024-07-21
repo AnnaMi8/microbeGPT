@@ -1,0 +1,90 @@
+1
+SELECT family, SUM(count) as total_count
+FROM taxonomy t
+JOIN abundance a ON t.species = a.species
+JOIN HealthyStoolSamples m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_count DESC
+LIMIT 1;
+
+2
+SELECT family, SUM(count) as family_abundance
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY family_abundance DESC
+LIMIT 1;
+
+3
+SELECT family, SUM(count) AS total_abundance
+FROM taxonomy AS t
+JOIN abundance AS a ON t.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+4
+SELECT family, SUM(count) AS total_count
+FROM taxonomy AS t
+JOIN abundance AS a ON t.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family 
+ORDER BY total_count DESC 
+LIMIT 1;
+
+5
+SELECT family, SUM(count) AS total_count
+FROM taxonomy AS t
+JOIN abundance AS a ON t.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_count DESC
+LIMIT 1;
+
+6
+SELECT family, SUM(count) AS total_abundance
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+7
+SELECT family, SUM(count) AS total_abundance
+FROM taxonomy AS t
+JOIN abundance AS a ON t.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+8
+SELECT family, SUM(count) AS total_count
+FROM taxonomy AS t
+JOIN abundance AS a ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_count DESC
+LIMIT 1;
+
+9
+SELECT family, SUM(count) AS total_abundance
+FROM taxonomy
+JOIN abundance ON taxonomy.species = abundance.species
+JOIN HealthyStoolSamples ON abundance.sample_id = HealthyStoolSamples.sample_id
+GROUP BY family
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+10
+SELECT family, SUM(count) AS total_count
+FROM taxonomy AS t
+JOIN abundance AS a ON t.species = a.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+GROUP BY family
+ORDER BY total_count DESC
+LIMIT 1;
+

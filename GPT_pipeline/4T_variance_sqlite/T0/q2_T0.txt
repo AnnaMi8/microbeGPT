@@ -1,0 +1,50 @@
+1
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+2
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+3
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+4
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+5
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+6
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+7
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+8
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+9
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+
+10
+SELECT AVG(count) 
+FROM abundance 
+WHERE species = 'faecalibacterium prausnitzii';
+

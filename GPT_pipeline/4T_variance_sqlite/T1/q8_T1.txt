@@ -1,0 +1,71 @@
+1
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter' AND t.species = 'pylori';
+
+2
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter' AND t.species = 'pylori';
+
+3
+SELECT MIN(count), MAX(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+4
+SELECT MIN(count) as min_abundance, MAX(count) as max_abundance 
+FROM abundance AS a 
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id 
+JOIN taxonomy AS t ON a.species = t.species 
+WHERE t.genus = 'Helicobacter' 
+AND a.count > 0;
+
+5
+SELECT COUNT(*) FROM abundance AS a
+JOIN metadata AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori' AND m.metadata_column_name = 'disease'
+AND m.metadata_variable_content = 'healthy' AND m.sample_id IN (
+            SELECT sample_id
+            FROM metadata
+            WHERE metadata_column_name = 'body_site'
+            AND metadata_variable_content = 'stool'
+        );
+
+6
+SELECT COUNT(*) AS count_hpylori
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+7
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+8
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+9
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter' AND t.species = 'pylori';
+
+10
+SELECT MIN(count), MAX(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter';
+

@@ -1,0 +1,70 @@
+1
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+2
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+3
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+4
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+5
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+6
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+7
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+8
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+9
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+10
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+

@@ -1,0 +1,102 @@
+1
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+m.non_westernized = 'no' AND
+t.family = 'Prevotellaceae';
+
+2
+SELECT AVG(a.count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+m.non_westernized = 'no' AND
+t.family = 'Prevotellaceae';
+
+3
+SELECT AVG(a.count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' 
+   AND m.body_site = 'stool' 
+   AND m.non_westernized = 'no'
+   AND t.family = 'Prevotellaceae';
+
+4
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool' 
+AND m.non_westernized = 'no'
+AND t.family = 'Prevotellaceae';
+
+5
+SELECT AVG(a.count)
+FROM ds_mgpt_mgpt.abundance AS a 
+JOIN ds_mgpt_mgpt.metadata as m 
+    ON a.sample_id = m.sample_id 
+    AND m.disease = 'healthy'
+    AND m.body_site = 'stool'
+    AND m.non_westernized = 'no'
+JOIN ds_mgpt_mgpt.taxonomy AS t 
+    ON t.species = a.species 
+    AND t.family = 'Prevotellaceae';
+
+6
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE t.family = 'Prevotellaceae' AND 
+      m.body_site = 'stool' AND 
+      m.disease = 'healthy' AND 
+      m.non_westernized = 'no';
+
+7
+SELECT AVG(a.count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool' 
+AND m.non_westernized = 'no' 
+AND t.family = 'Prevotellaceae';
+
+8
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy as t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+m.country NOT LIKE 'W%' AND
+t.family = 'Prevotellaceae';
+
+9
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+m.non_westernized = 'no' AND
+t.family = 'Prevotellaceae';
+
+10
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool'
+AND m.country IN ('USA', 'Canada', 'Australia', 'New Zealand', 'United Kingdom', 'Ireland')
+AND t.family = 'Prevotellaceae';
+

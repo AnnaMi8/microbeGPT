@@ -1,0 +1,81 @@
+1
+SELECT COUNT(DISTINCT species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON r.rxnid = pr.rxnid
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON pr.pathway = ip.pathway
+WHERE ip.pathway_id = 'PWY-6173';
+
+2
+SELECT COUNT(DISTINCT t.species)
+FROM ds_mgpt_mgpt.taxonomy AS t
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+3
+SELECT COUNT(DISTINCT species) 
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+
+4
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS ec ON a.species = ec.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON ec.ip_id = ip.ip_id
+WHERE ip.pathway = 'PWY-6173';
+
+5
+SELECT COUNT(DISTINCT species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS ipe ON a.species = ipe.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS ipp ON ipe.ip_id = ipp.ip_id
+WHERE ipp.pathway = 'PWY-6173';
+
+6
+SELECT COUNT(DISTINCT taxa.species) 
+FROM ds_mgpt_mgpt.taxonomy AS taxa
+JOIN ds_mgpt_mgpt.chocophlan AS cp ON taxa.species = cp.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS ru ON cp.uniref90 = ru.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ru.rxnid = pr.rxnid
+JOIN ds_mgpt_mgpt.unique_pathways AS up ON pr.pathway = up.pathway_id
+WHERE up.pathway_id = 'PWY-6173';
+
+7
+SELECT COUNT(DISTINCT species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species 
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species 
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90 
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid 
+JOIN ds_mgpt_mgpt.unique_pathways AS up ON p.pathway = up.pathway_id
+WHERE up.pathway_id = 'PWY-6173';
+
+8
+SELECT COUNT(DISTINCT taxa_string)
+FROM ds_mgpt_mgpt.chocophlan AS ch
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON pr.rxnid = ch.uniref90
+WHERE pr.pathway = 'PWY-6173';
+
+9
+SELECT COUNT(DISTINCT(t.species))
+FROM ds_mgpt_mgpt.taxonomy AS t
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species=c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90=r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid=p.rxnid
+WHERE p.pathway='PWY-6173';
+
+10
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173';
+

@@ -1,0 +1,75 @@
+1
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool' 
+AND a.species = 'Helicobacter pylori';
+
+2
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND a.species = 'Helicobacter pylori';
+
+3
+SELECT COUNT(*) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species = 'Helicobacter pylori' AND
+a.count > 0;
+
+4
+SELECT COUNT(*) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species = 'Helicobacter pylori';
+
+5
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND a.species = 'Helicobacter pylori';
+
+6
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND a.species = 'Helicobacter pylori';
+
+7
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      a.species = 'Helicobacter pylori';
+
+8
+SELECT COUNT(*) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species = 'Helicobacter pylori' AND
+a.count > 0;
+
+9
+SELECT COUNT(*) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species = 'Helicobacter pylori' AND
+a.count > 0;
+
+10
+SELECT MIN(count), MAX(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND a.species = 'Helicobacter pylori';
+

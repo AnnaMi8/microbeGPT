@@ -1,0 +1,120 @@
+1
+SELECT AVG(sum_count)
+FROM (
+  SELECT SUM(count) AS sum_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS subquery;
+
+2
+SELECT AVG(ab.count)
+FROM abundance AS ab
+JOIN chocophlan AS ch ON ab.species = ch.species
+JOIN reactions AS r ON ch.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS m ON ab.sample_id = m.sample_id
+WHERE i.pathway = 'PWY-6173';
+
+3
+SELECT AVG(abundance.count) AS avg_sum
+FROM abundance
+JOIN chocophlan ON abundance.species = chocophlan.species
+JOIN reactions ON chocophlan.uniref90 = reactions.uniref90
+JOIN pathway ON reactions.rxnid = pathway.rxnid
+JOIN ip2mc ON pathway.pathway = ip2mc.pathway
+JOIN HealthyStoolSamples ON abundance.sample_id = HealthyStoolSamples.sample_id
+WHERE ip2mc.pathway = 'PWY-6173';
+
+4
+SELECT AVG(sum_count)
+FROM (
+  SELECT SUM(abundance.count) AS sum_count
+  FROM abundance
+  JOIN chocophlan ON abundance.species = chocophlan.species
+  JOIN reactions ON chocophlan.uniref90 = reactions.uniref90
+  JOIN pathway ON reactions.rxnid = pathway.rxnid
+  JOIN ip2mc ON pathway.pathway = ip2mc.pathway
+  JOIN HealthyStoolSamples ON abundance.sample_id = HealthyStoolSamples.sample_id
+  WHERE ip2mc.pathway = 'PWY-6173'
+  GROUP BY abundance.sample_id
+) AS sum_counts;
+
+5
+SELECT AVG(total_count)
+FROM (
+  SELECT SUM(count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS summed_counts;
+
+6
+SELECT AVG(abundance.count) AS avg_abundance
+FROM abundance
+JOIN chocophlan ON abundance.species = chocophlan.species
+JOIN reactions ON chocophlan.uniref90 = reactions.uniref90
+JOIN pathway ON reactions.rxnid = pathway.rxnid
+JOIN ip2mc ON pathway.pathway = ip2mc.pathway
+JOIN HealthyStoolSamples ON abundance.sample_id = HealthyStoolSamples.sample_id
+WHERE ip2mc.pathway = 'PWY-6173';
+
+7
+SELECT AVG(total_count) AS average_level
+FROM (
+    SELECT SUM(count) AS total_count
+    FROM abundance AS a
+    JOIN chocophlan AS c ON a.species = c.species
+    JOIN reactions AS r ON c.uniref90 = r.uniref90
+    JOIN pathway AS p ON r.rxnid = p.rxnid
+    JOIN ip2mc AS i ON p.pathway = i.pathway
+    JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+    WHERE i.pathway = 'PWY-6173'
+    GROUP BY a.sample_id
+) AS t;
+
+8
+SELECT AVG(abundance.count)
+FROM abundance
+JOIN chocophlan ON abundance.species = chocophlan.species
+JOIN reactions ON chocophlan.uniref90 = reactions.uniref90
+JOIN pathway ON reactions.rxnid = pathway.rxnid
+JOIN ip2mc ON pathway.pathway = ip2mc.pathway
+JOIN HealthyStoolSamples ON abundance.sample_id = HealthyStoolSamples.sample_id
+WHERE ip2mc.pathway = 'PWY-6173';
+
+9
+SELECT AVG(total_count)
+FROM (
+    SELECT SUM(count) AS total_count
+    FROM abundance AS a
+    JOIN chocophlan AS c ON a.species = c.species
+    JOIN reactions AS r ON c.uniref90 = r.uniref90
+    JOIN pathway AS p ON r.rxnid = p.rxnid
+    JOIN ip2mc AS i ON p.pathway = i.pathway
+    JOIN HealthyStoolSamples AS h ON a.sample_id = h.sample_id
+    WHERE p.pathway = 'PWY-6173'
+    GROUP BY a.sample_id
+) AS sum_count;
+
+10
+SELECT AVG(ab.count) 
+FROM abundance AS ab
+JOIN chocophlan AS ch ON ab.species = ch.species
+JOIN reactions AS re ON ch.uniref90 = re.uniref90
+JOIN pathway AS p ON re.rxnid = p.rxnid
+JOIN ip2mc AS ip ON p.pathway = ip.pathway
+JOIN HealthyStoolSamples AS m ON ab.sample_id = m.sample_id
+WHERE ip.pathway = 'PWY-6173';
+

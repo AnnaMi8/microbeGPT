@@ -1,0 +1,63 @@
+1
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+2
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy' 
+  AND sample_id IN (
+      SELECT sample_id 
+      FROM metadata 
+      WHERE metadata_column_name = 'body_site' 
+        AND metadata_variable_content = 'stool'
+  );
+
+3
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+4
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content = 'healthy';
+
+5
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+AND metadata_variable_content = 'healthy';
+
+6
+To answer the question of how many samples belong to healthy patients, we need to count the number of samples that have a metadata variable of 'disease' equal to 'healthy'. We can achieve this by using the metadata table and filtering the rows where metadata_column_name is 'disease' and metadata_variable_content is 'healthy', then counting the distinct values of sample_id:;
+
+7
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease' 
+    AND metadata_variable_content = 'healthy';
+
+8
+SELECT COUNT(DISTINCT sample_id)
+FROM metadata
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy';
+
+9
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+AND metadata_variable_content = 'healthy';
+
+10
+SELECT COUNT(DISTINCT sample_id) 
+FROM metadata 
+WHERE metadata_column_name = 'disease'
+AND metadata_variable_content = 'healthy';
+

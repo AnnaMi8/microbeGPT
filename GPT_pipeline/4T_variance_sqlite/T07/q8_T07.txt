@@ -1,0 +1,63 @@
+1
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+2
+SELECT COUNT(*) 
+FROM HealthyStoolSamples AS h
+JOIN abundance AS a ON h.sample_id = a.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter' AND t.species = 'pylori';
+
+3
+SELECT COUNT(DISTINCT sample_id) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+4
+SELECT COUNT(*) 
+FROM abundance AS a 
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id 
+JOIN taxonomy AS t ON a.species=t.species 
+WHERE t.genus = 'Helicobacter' AND a.count > 0;
+
+5
+SELECT MIN(count), MAX(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+6
+SELECT MIN(count), MAX(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+7
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+8
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.genus = 'Helicobacter' AND t.species = 'pylori';
+
+9
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE a.species = 'Helicobacter pylori';
+
+10
+SELECT COUNT(*) FROM abundance AS ab 
+JOIN HealthyStoolSamples AS md ON ab.sample_id = md.sample_id
+JOIN taxonomy AS tx ON ab.species = tx.species 
+WHERE tx.species = 'Helicobacter pylori';
+

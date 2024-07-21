@@ -1,0 +1,195 @@
+1
+SELECT a.species, SUM(a.count) as total_abundance
+FROM abundance AS a
+JOIN metadata AS m ON a.sample_id = m.sample_id AND m.metadata_column_name = 'disease' AND m.metadata_variable_content = 'healthy' AND m.sample_id IN (SELECT sample_id FROM metadata WHERE metadata_column_name = 'body_site' AND metadata_variable_content = 'stool')
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+2
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS hs ON a.sample_id = hs.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE hs.metadata_variable_content = 'healthy' 
+  AND hs.metadata_column_name = 'disease'
+  AND hs.sample_id IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_variable_content = 'stool'
+      AND metadata_column_name = 'body_site'
+  ) 
+  AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+3
+WITH 
+-- Filter healthy stool samples
+HealthyStoolSamples AS (
+  SELECT *
+  FROM metadata
+  WHERE metadata_column_name = 'disease'
+    AND metadata_variable_content = 'healthy'
+    AND sample_id IN (
+        SELECT sample_id
+        FROM metadata
+        WHERE metadata_column_name = 'body_site'
+          AND metadata_variable_content = 'stool'
+    )
+),
+-- Select the species that have histamine pathway PWY-6173
+HistamineSpecies AS (
+  SELECT DISTINCT t.species
+  FROM taxonomy AS t
+  JOIN chocophlan AS c ON t.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  WHERE p.pathway = 'PWY-6173'
+),
+-- Calculate the abundance count of species belonging to healthy stool samples 
+HealthyStoolAbundance AS (
+  SELECT a.species, SUM(a.count) AS abundance
+  FROM abundance AS a
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  GROUP BY a.species
+)
+-- Rank the species by abundance count and select the top three
+SELECT hs.species, COALESCE(hsa.abundance, 0) AS abundance
+FROM HistamineSpecies AS hs
+LEFT JOIN HealthyStoolAbundance AS hsa ON hs.species = hsa.species
+ORDER BY abundance DESC
+LIMIT 3;
+
+4
+SELECT a.species, SUM(a.count) AS abundance
+FROM abundance AS a
+JOIN chocophlan AS c ON c.species = a.species
+JOIN reactions AS r ON r.uniref90 = c.uniref90
+JOIN pathway AS p ON p.rxnid = r.rxnid
+JOIN ip2mc AS i ON i.pathway = p.pathway
+JOIN HealthyStoolSamples AS h ON h.sample_id = a.sample_id
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY abundance DESC
+LIMIT 3;
+
+5
+SELECT a.species, SUM(a.count) AS abundance_count
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE m.metadata_variable_content = 'healthy'
+AND m.metadata_column_name = 'disease'
+AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY abundance_count DESC
+LIMIT 3;
+
+6
+SELECT t.species, SUM(a.count) as total_abundance 
+FROM abundance AS a 
+JOIN metadata AS m ON a.sample_id = m.sample_id 
+JOIN chocophlan AS c ON a.species = c.species 
+JOIN reactions AS r ON c.uniref90 = r.uniref90 
+JOIN pathway AS p ON r.rxnid = p.rxnid 
+JOIN taxonomy AS t ON a.species = t.species 
+WHERE m.metadata_column_name = 'disease' AND m.metadata_variable_content = 'healthy' AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool') 
+AND p.pathway = 'PWY-6173' 
+GROUP BY t.species 
+HAVING total_abundance > 0 
+ORDER BY total_abundance DESC 
+LIMIT 3;
+
+7
+SELECT DISTINCT a.species
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN ip2mc AS i ON p.pathway = i.pathway
+JOIN HealthyStoolSamples AS h ON a.sample_id = h.sample_id
+WHERE h.metadata_variable_content = 'healthy'
+  AND h.metadata_column_name = 'disease'
+  AND h.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+  AND p.pathway = 'PWY-6173'
+ORDER BY a.count DESC
+LIMIT 3;
+
+8
+SELECT t.species, SUM(a.count) AS total_abundance 
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN chocophlan AS c ON t.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content = 'healthy'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  ) 
+  AND p.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+9
+SELECT a.species, SUM(a.count) as total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON c.species = a.species
+JOIN reactions AS r ON r.uniref90 = c.uniref90
+JOIN pathway AS p ON p.rxnid = r.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY SUM(a.count) DESC
+LIMIT 3;
+
+10
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  ) 
+  AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+

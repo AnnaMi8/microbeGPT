@@ -1,0 +1,142 @@
+1
+SELECT a.species, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id 
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ip.pathway = pr.pathway
+WHERE m.disease = 'healthy' and 
+      m.body_site = 'stool' and 
+      pr.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+2
+SELECT t.species, SUM(a.count) AS abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.id = ip.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ip.pathway = pr.pathway
+WHERE m.disease = 'healthy'
+AND m.body_site = 'stool'
+AND pr.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY abundance DESC
+LIMIT 3;
+
+3
+SELECT t.species, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.genus = c.genus AND t.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool' 
+AND ip.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+4
+SELECT t.species, SUM(ab.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance ab
+JOIN ds_mgpt_mgpt.taxonomy t
+    ON ab.species = t.species
+JOIN ds_mgpt_mgpt.ip_ec ip
+    ON ab.species = ip.ec
+JOIN ds_mgpt_mgpt.ip_pathway ip_pw
+    ON ip.ip_id = ip_pw.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions pr
+    ON ip_pw.pathway = pr.pathway
+WHERE pr.pathway = 'PWY-6173' AND EXISTS (
+    SELECT 1
+    FROM ds_mgpt_mgpt.metadata m
+    WHERE m.sample_id = ab.sample_id AND m.body_site = 'stool' AND m.disease = 'healthy'
+)
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+5
+SELECT a.species, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan as c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway as ip ON c.uniref90 = ip.ip_id
+WHERE m.disease = 'healthy' AND 
+      m.body_site = 'stool' AND 
+      ip.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+6
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id
+WHERE m.body_site = 'stool' AND m.disease = 'healthy' AND ip.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+7
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN (
+    SELECT ip.id
+    FROM ds_mgpt_mgpt.ip_pathway AS ip
+    JOIN ds_mgpt_mgpt.unique_pathways AS up ON ip.pathway = up.pathway_id
+    WHERE up.pathway_id = 'PWY-6173'
+) AS p ON a.pid = p.id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+8
+SELECT t.species, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON c.species = t.species
+JOIN ds_mgpt_mgpt.ip_pathway AS i ON i.ip_id = c.id
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool' 
+AND i.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+9
+SELECT a.species, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.pid = ip.ip_id
+WHERE m.disease = 'healthy'
+AND m.body_site = 'stool'
+AND ip.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+10
+SELECT a.species, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.genus = c.genus AND t.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS p ON c.uniref90 = p.ip_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+

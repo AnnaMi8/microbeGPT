@@ -1,0 +1,57 @@
+1
+SELECT COUNT(DISTINCT sample_id) AS num_non_healthy_samples, 
+       COUNT(DISTINCT metadata_variable_content) AS num_conditions
+FROM metadata 
+WHERE metadata_column_name = 'disease' AND metadata_variable_content != 'healthy';
+
+2
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_different_conditions
+FROM metadata m
+WHERE m.metadata_column_name = 'disease'
+AND m.metadata_variable_content != 'healthy';
+
+3
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_conditions
+FROM metadata AS m
+WHERE m.metadata_column_name = 'disease' AND m.metadata_variable_content != 'healthy';
+
+4
+SELECT COUNT(DISTINCT sample_id) AS num_samples, 
+       COUNT(DISTINCT metadata_variable_content) AS num_conditions 
+FROM metadata 
+WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content != 'healthy';
+
+5
+SELECT COUNT(DISTINCT metadata_variable_content) as condition_count, COUNT(*) as non_healthy_count
+FROM metadata
+WHERE metadata_column_name = 'disease' AND metadata_variable_content != 'healthy';
+
+6
+SELECT COUNT(DISTINCT m.sample_id) AS num_non_healthy_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_conditions
+FROM metadata AS m
+WHERE m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content != 'healthy';
+
+7
+SELECT COUNT(DISTINCT m.sample_id) AS non_healthy_samples, COUNT(DISTINCT m.metadata_variable_content) AS conditions
+FROM metadata AS m
+WHERE m.metadata_column_name = 'disease' AND m.metadata_variable_content != 'healthy';
+
+8
+SELECT COUNT(DISTINCT sample_id) AS 'NumSamples', COUNT(DISTINCT metadata_variable_content) AS 'NumConditions' 
+FROM metadata
+WHERE metadata_column_name = 'disease'
+  AND metadata_variable_content != 'healthy';
+
+9
+SELECT COUNT(DISTINCT sample_id) AS num_non_healthy_samples, COUNT(DISTINCT metadata_variable_content) AS num_conditions
+FROM metadata
+WHERE metadata_column_name = 'disease'
+AND metadata_variable_content != 'healthy';
+
+10
+SELECT COUNT(DISTINCT m.sample_id) AS non_healthy_samples, COUNT(DISTINCT m.metadata_variable_content) AS unique_conditions
+FROM metadata AS m
+WHERE m.metadata_column_name = 'disease' AND m.metadata_variable_content <> 'healthy';
+

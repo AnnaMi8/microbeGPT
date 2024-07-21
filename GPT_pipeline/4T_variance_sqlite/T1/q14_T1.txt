@@ -1,0 +1,70 @@
+1
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+2
+SELECT COUNT(*) 
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+3
+SELECT COUNT(DISTINCT a.species) 
+FROM abundance AS a 
+JOIN taxonomy AS t ON a.species = t.species 
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id 
+WHERE t.phylum = 'Lentisphaerae';
+
+4
+SELECT COUNT(DISTINCT a.species) 
+FROM abundance AS a 
+JOIN taxonomy AS t ON a.species = t.species 
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id 
+WHERE t.phylum = 'Lentisphaerae';
+
+5
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+6
+SELECT COUNT(DISTINCT a.species) 
+FROM abundance a
+JOIN taxonomy t ON a.species = t.species
+JOIN HealthyStoolSamples h ON a.sample_id = h.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+7
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+8
+SELECT COUNT(*) 
+FROM abundance AS a 
+JOIN taxonomy AS t ON a.species = t.species 
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id 
+WHERE t.phylum = 'Lentisphaerae';
+
+9
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Lentisphaerae';
+
+10
+SELECT COUNT(DISTINCT a.species)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Lentisphaerae';
+

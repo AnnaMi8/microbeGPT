@@ -1,0 +1,82 @@
+1
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+2
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+3
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+4
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+5
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE m.metadata_column_name = 'body_site'
+  AND m.metadata_variable_content = 'stool'
+  AND m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content = 'healthy'
+  AND t.phylum = 'Firmicutes';
+
+6
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+7
+SELECT AVG(count)
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE t.phylum = 'Firmicutes';
+
+8
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+9
+SELECT AVG(count) 
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE t.phylum = 'Firmicutes';
+
+10
+SELECT AVG(count)
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN taxonomy AS t ON a.species = t.species
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+  AND t.phylum = 'Firmicutes';
+

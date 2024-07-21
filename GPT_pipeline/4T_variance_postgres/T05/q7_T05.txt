@@ -1,0 +1,88 @@
+1
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species LIKE 'Firmicutes%';
+
+2
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Firmicutes';
+
+3
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Firmicutes';
+
+4
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy as t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Firmicutes';
+
+5
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy as t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Firmicutes';
+
+6
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Firmicutes';
+
+7
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+a.species LIKE '%Firmicutes%';
+
+8
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Firmicutes';
+
+9
+SELECT AVG(count)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Firmicutes';
+
+10
+SELECT AVG(count) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Firmicutes';
+

@@ -1,0 +1,50 @@
+1
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+2
+SELECT COUNT(DISTINCT m.study_name) AS num_studies, COUNT(DISTINCT m.sample_id) AS num_samples
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+3
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+4
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+5
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+6
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+7
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+8
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+9
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+
+10
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.study_name) AS num_studies
+FROM ds_mgpt_mgpt.metadata AS m
+WHERE m.body_site = 'vagina';
+

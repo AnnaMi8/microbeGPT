@@ -1,0 +1,102 @@
+1
+SELECT t.phylum, SUM(a.count) as total_count 
+FROM ds_mgpt_mgpt.abundance AS a 
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species 
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id 
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' 
+GROUP BY t.phylum 
+ORDER BY total_count DESC 
+LIMIT 1;
+
+2
+SELECT t.phylum, SUM(a.count) AS total_count
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy as t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_count DESC
+LIMIT 1;
+
+3
+SELECT t.phylum, SUM(a.count) AS total_count
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_count DESC
+LIMIT 1;
+
+4
+SELECT t.phylum, SUM(a.count) as total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy as t ON a.species = t.species
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+5
+SELECT t.phylum, SUM(a.count) as total_count 
+FROM ds_mgpt_mgpt.abundance AS a 
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id 
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species 
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' 
+GROUP BY t.phylum 
+ORDER BY total_count DESC 
+LIMIT 1;
+
+6
+SELECT t.phylum, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+7
+SELECT t.phylum, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+8
+SELECT t.phylum, SUM(a.count) AS total_count
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_count DESC
+LIMIT 1;
+
+9
+SELECT t.phylum, SUM(a.count) AS total_abundance
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_abundance DESC
+LIMIT 1;
+
+10
+SELECT t.phylum, SUM(a.count) as total_count
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND m.body_site = 'stool'
+GROUP BY t.phylum
+ORDER BY total_count DESC
+LIMIT 1;
+

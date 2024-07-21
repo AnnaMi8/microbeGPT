@@ -1,0 +1,71 @@
+1
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_counts;
+
+2
+SELECT AVG(total_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS total_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_count;
+
+3
+SELECT AVG(count_species) AS avg_species_per_sample
+FROM (
+  SELECT COUNT(DISTINCT species) AS count_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id
+) AS species_count_per_sample;
+
+4
+SELECT COUNT(DISTINCT species) / COUNT(DISTINCT sample_id) AS average_species_per_sample
+FROM ds_mgpt_mgpt.abundance;
+
+5
+SELECT AVG(total_species_per_sample) AS average_species_per_sample
+FROM (
+    SELECT COUNT(DISTINCT species) AS total_species_per_sample
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_per_sample;
+
+6
+SELECT AVG(species_count)
+FROM (
+    SELECT COUNT(DISTINCT species) as species_count
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id) as sample_species_counts;
+
+7
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+    ) AS species_counts;
+
+8
+SELECT COUNT(DISTINCT species) / COUNT(DISTINCT sample_id) AS avg_species_per_patient
+FROM ds_mgpt_mgpt.abundance;
+
+9
+SELECT AVG(num_species)
+FROM (
+  SELECT COUNT(DISTINCT species) as num_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id
+) as species_count;
+
+10
+SELECT AVG(cnt_species)
+FROM (
+  SELECT COUNT(DISTINCT species) as cnt_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id, pid
+) AS subquery;
+

@@ -1,0 +1,90 @@
+1
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Lentisphaerae';
+
+2
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Lentisphaerae';
+
+3
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a 
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id 
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species 
+WHERE m.disease = 'healthy' AND m.body_site = 'stool' AND t.phylum = 'Lentisphaerae';
+
+4
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m
+ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t
+ON a.species = t.species
+WHERE m.disease = 'healthy' 
+AND m.body_site = 'stool'
+AND t.phylum = 'Lentisphaerae';
+
+5
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+      m.body_site = 'stool' AND
+      t.phylum = 'Lentisphaerae';
+
+6
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy'
+  AND m.body_site = 'stool'
+  AND t.phylum = 'Lentisphaerae';
+
+7
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Lentisphaerae';
+
+8
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Lentisphaerae';
+
+9
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy'
+AND m.body_site = 'stool'
+AND t.phylum = 'Lentisphaerae';
+
+10
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata as m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.taxonomy AS t ON a.species = t.species
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+t.phylum = 'Lentisphaerae';
+

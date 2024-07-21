@@ -1,0 +1,130 @@
+1
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+2
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+3
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+4
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+5
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+6
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+7
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+8
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+9
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+10
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+

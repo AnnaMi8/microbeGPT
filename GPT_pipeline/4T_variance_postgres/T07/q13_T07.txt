@@ -1,0 +1,103 @@
+1
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.id = ip.ip_id
+WHERE m.disease = 'healthy'
+AND m.body_site = 'stool'
+AND ip.pathway = 'PWY-6305';
+
+2
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ip.pathway = pr.pathway
+WHERE m.disease = 'healthy'
+AND m.body_site = 'stool'
+AND pr.pathway = 'PWY-6305';
+
+3
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id
+WHERE m.disease = 'healthy' AND 
+      m.body_site = 'stool' AND
+      ip.pathway = 'PWY-6305';
+
+4
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS ip ON c.uniref90 = ip.ip_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+ip.pathway = 'PWY-6305';
+
+5
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS i ON a.species = i.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS p ON i.ip_id = p.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON p.pathway = pr.pathway
+WHERE pr.pathway = 'PWY-6305' AND
+a.sample_id IN (SELECT sample_id FROM ds_mgpt_mgpt.metadata WHERE disease = 'healthy' AND body_site = 'stool');
+
+6
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS ipe ON a.species = ipe.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS ipp ON ipe.ip_id = ipp.ip_id
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+ipp.pathway = 'PWY-6305';
+
+7
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+JOIN ds_mgpt_mgpt.chocophlan AS c ON a.species = c.species
+JOIN ds_mgpt_mgpt.ip_pathway AS p ON c.uniref90 = p.ip_id
+WHERE m.disease = 'healthy' AND
+m.body_site = 'stool' AND
+p.pathway = 'PWY-6305';
+
+8
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS i ON a.species = i.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS p ON i.ip_id = p.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON p.pathway = pr.pathway
+WHERE pr.pathway = 'PWY-6305'
+AND a.sample_id IN (SELECT sample_id FROM ds_mgpt_mgpt.metadata WHERE disease = 'healthy' AND body_site = 'stool');
+
+9
+SELECT COUNT(DISTINCT a.species) 
+FROM ds_mgpt_mgpt.ip_pathway AS ip
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ip.pathway = pr.pathway
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS ru ON pr.rxnid = ru.rxnid
+JOIN ds_mgpt_mgpt.chocophlan AS c ON ru.uniref90 = c.uniref90
+JOIN ds_mgpt_mgpt.abundance AS a ON c.species = a.species
+JOIN ds_mgpt_mgpt.metadata AS m ON a.sample_id = m.sample_id
+WHERE ip.pathway = 'PWY-6305' AND m.disease = 'healthy' AND m.body_site = 'stool';
+
+10
+SELECT COUNT(DISTINCT a.species)
+FROM ds_mgpt_mgpt.abundance AS a
+JOIN ds_mgpt_mgpt.ip_ec AS ipe ON a.species = ipe.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS ipp ON ipe.ip_id = ipp.ip_id
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ipp.pathway = pr.pathway
+WHERE pr.pathway = 'PWY-6305'
+AND a.sample_id IN (
+    SELECT sample_id 
+    FROM ds_mgpt_mgpt.metadata 
+    WHERE disease = 'healthy' 
+    AND body_site = 'stool'
+);
+

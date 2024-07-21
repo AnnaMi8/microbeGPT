@@ -1,0 +1,74 @@
+1
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+2
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS ru ON c.uniref90 = ru.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ru.rxnid = pr.rxnid
+WHERE pr.pathway = '4AMINOBUTMETAB-PWY';
+
+3
+SELECT COUNT(DISTINCT t.species)
+FROM ds_mgpt_mgpt.taxonomy AS t
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+4
+SELECT COUNT(DISTINCT t.species)
+FROM ds_mgpt_mgpt.taxonomy AS t
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+5
+SELECT COUNT(DISTINCT t.species)
+FROM ds_mgpt_mgpt.taxonomy AS t
+JOIN ds_mgpt_mgpt.chocophlan AS c ON t.species = c.species
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS ru ON c.uniref90 = ru.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ru.rxnid = pr.rxnid
+JOIN ds_mgpt_mgpt.unique_pathways AS up ON pr.pathway = up.pathway_id
+WHERE up.pathway_id = '4AMINOBUTMETAB-PWY';
+
+6
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.ip_ec AS ipe ON c.id = ipe.id
+JOIN ds_mgpt_mgpt.ip_pathway AS ipp ON ipe.ip_id = ipp.ip_id
+WHERE ipp.pathway = '4AMINOBUTMETAB-PWY';
+
+7
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS ru ON c.uniref90 = ru.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS pr ON ru.rxnid = pr.rxnid
+WHERE pr.pathway = '4AMINOBUTMETAB-PWY';
+
+8
+SELECT COUNT(DISTINCT species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+9
+SELECT COUNT(DISTINCT species) 
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.reactions_uniref90s AS r ON c.uniref90 = r.uniref90
+JOIN ds_mgpt_mgpt.pathways_reactions AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+10
+SELECT COUNT(DISTINCT c.species)
+FROM ds_mgpt_mgpt.chocophlan AS c
+JOIN ds_mgpt_mgpt.ip_ec AS ipe ON c.id = ipe.ip_id
+JOIN ds_mgpt_mgpt.ip_pathway AS ipp ON ipe.ip_id = ipp.ip_id
+WHERE ipp.pathway = '4AMINOBUTMETAB-PWY';
+

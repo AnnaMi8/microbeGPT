@@ -1,0 +1,140 @@
+1
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+2
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+3
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+4
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+5
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+6
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+7
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+8
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+9
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+
+10
+SELECT AVG(total_count) AS avg_count
+FROM (
+  SELECT SUM(a.count) AS total_count
+  FROM abundance AS a
+  JOIN chocophlan AS c ON a.species = c.species
+  JOIN reactions AS r ON c.uniref90 = r.uniref90
+  JOIN pathway AS p ON r.rxnid = p.rxnid
+  JOIN ip2mc AS i ON p.pathway = i.pathway
+  JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+  WHERE i.pathway = 'PWY-6173'
+  GROUP BY a.sample_id
+) AS counts;
+

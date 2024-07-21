@@ -1,0 +1,4 @@
+How many unique species participate in the pathway labeled as ‘PWY-6173’?
+How abundant is K. aerogenes and K. oxytoca in healthy stool samples?
+What's the average abundance of species that possess histamine pathway PWY-6173 in healthy stool samples? 
+Retrieve the sample IDs, counts, and species from the ‘abundance’ table where the species contains the term  ‘Klebsiella’ or contains the term ‘Lactobacillus’. Additionally, filter the results to include only samples where the count is greater than zero and the sample ID is associated with both ‘Klebsiella’ and a ‘Lactobacillus’ species.

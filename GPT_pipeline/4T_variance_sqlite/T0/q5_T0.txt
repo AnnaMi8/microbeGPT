@@ -1,0 +1,60 @@
+1
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+2
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+3
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+4
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+5
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+6
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+7
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+8
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+9
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+
+10
+SELECT COUNT(DISTINCT m.sample_id) AS num_samples, COUNT(DISTINCT m.metadata_variable_content) AS num_studies
+FROM metadata AS m
+JOIN abundance AS a ON m.sample_id = a.sample_id
+WHERE m.metadata_column_name = 'body_site' AND m.metadata_variable_content = 'vagina';
+

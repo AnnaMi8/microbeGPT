@@ -1,0 +1,69 @@
+1
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+2
+SELECT count(DISTINCT c.species) as num_species
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid 
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+3
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+4
+SELECT COUNT(DISTINCT c.species)
+FROM reactions AS r
+JOIN chocophlan AS c ON r.uniref90 = c.uniref90
+JOIN ip2ec AS i ON r.rxnid = i.ip_id
+JOIN ip2mc AS p ON i.ip_id = p.ip_id AND p.pathway = '4AMINOBUTMETAB-PWY';
+
+5
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+6
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+7
+SELECT COUNT(DISTINCT c.species) 
+FROM chocophlan AS c 
+JOIN reactions AS r ON c.uniref90 = r.uniref90 
+JOIN pathway AS p ON r.rxnid = p.rxnid 
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+8
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid AND p.pathway = '4AMINOBUTMETAB-PWY';
+
+9
+SELECT COUNT(DISTINCT c.species) AS num_species
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+
+10
+SELECT COUNT(DISTINCT c.species)
+FROM chocophlan AS c
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = '4AMINOBUTMETAB-PWY';
+

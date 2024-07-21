@@ -1,0 +1,72 @@
+1
+SELECT AVG(num_species)
+FROM (
+  SELECT COUNT(DISTINCT species) AS num_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id
+) AS species_per_sample;
+
+2
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_count;
+
+3
+SELECT AVG(cnt)
+FROM (
+    SELECT COUNT(DISTINCT species) AS cnt
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_count;
+
+4
+SELECT COUNT(DISTINCT species) / COUNT(DISTINCT sample_id) AS avg_species_per_sample
+FROM ds_mgpt_mgpt.abundance;
+
+5
+SELECT COUNT(DISTINCT species) / COUNT(DISTINCT sample_id) AS average_species_per_sample
+FROM ds_mgpt_mgpt.abundance;
+
+6
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_per_sample;
+
+7
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_count;
+
+8
+SELECT AVG(num_species)
+FROM (
+  SELECT COUNT(DISTINCT species) AS num_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id
+) AS species_counts;
+
+9
+SELECT AVG(num_species)
+FROM (
+  SELECT COUNT(DISTINCT species) AS num_species
+  FROM ds_mgpt_mgpt.abundance
+  GROUP BY sample_id
+) AS species_counts;
+
+10
+SELECT AVG(num_species)
+FROM (
+    SELECT COUNT(DISTINCT species) AS num_species
+    FROM ds_mgpt_mgpt.abundance
+    GROUP BY sample_id
+) AS species_count;
+

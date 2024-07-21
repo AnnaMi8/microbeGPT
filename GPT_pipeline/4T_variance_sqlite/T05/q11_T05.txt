@@ -1,0 +1,144 @@
+1
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+2
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content = 'healthy'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  ) 
+  AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+3
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+4
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN ip2mc AS i ON a.species = i.ip_id
+JOIN pathway AS p ON i.pathway = p.pathway
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+5
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+6
+SELECT t.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN taxonomy AS t ON a.species = t.species
+JOIN chocophlan AS c ON t.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+  AND p.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+7
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+8
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+WHERE p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+9
+SELECT a.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_variable_content = 'healthy'
+  AND m.metadata_column_name = 'disease'
+  AND m.sample_id IN (
+      SELECT sample_id
+      FROM metadata
+      WHERE metadata_column_name = 'body_site'
+        AND metadata_variable_content = 'stool'
+  )
+  AND p.pathway = 'PWY-6173'
+GROUP BY a.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+
+10
+SELECT t.species, SUM(a.count) AS total_abundance
+FROM abundance AS a
+JOIN chocophlan AS c ON a.species = c.species
+JOIN reactions AS r ON c.uniref90 = r.uniref90
+JOIN pathway AS p ON r.rxnid = p.rxnid
+JOIN HealthyStoolSamples AS m ON a.sample_id = m.sample_id
+WHERE p.pathway = 'PWY-6173'
+GROUP BY t.species
+ORDER BY total_abundance DESC
+LIMIT 3;
+

@@ -1,0 +1,108 @@
+1
+SELECT species, SUM(count) AS total_count
+FROM abundance AS a
+JOIN metadata AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_column_name = 'disease' AND m.metadata_variable_content != 'healthy'
+GROUP BY species
+ORDER BY total_count DESC
+LIMIT 1;
+
+2
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+3
+SELECT species, SUM(count) as total_count 
+FROM abundance
+JOIN metadata ON metadata.sample_id = abundance.sample_id
+WHERE metadata.metadata_column_name = 'disease' 
+      AND metadata.metadata_variable_content <> 'healthy'
+GROUP BY species
+ORDER BY total_count DESC
+LIMIT 10;
+
+4
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+JOIN metadata ON abundance.sample_id = metadata.sample_id
+WHERE metadata.metadata_column_name = 'disease' AND metadata.metadata_variable_content != 'healthy'
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+5
+To answer this question, we need to first identify the non-healthy samples and then determine the most abundant species in those samples. Note that the `metadata` table contains information about the condition of the patient, which we can use to identify non-healthy samples. We can join the `abundance` and `metadata` tables on the `sample_id` field to access both the species count and metadata information. Here is the SQL query that addresses this question:;
+
+6
+SELECT species, SUM(count) AS total_abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY total_abundance DESC
+LIMIT 10;
+
+7
+SELECT a.species, SUM(a.count) AS total_count
+FROM abundance AS a
+JOIN metadata AS m ON a.sample_id = m.sample_id
+WHERE m.metadata_column_name = 'disease'
+  AND m.metadata_variable_content != 'healthy'
+GROUP BY a.species
+ORDER BY total_count DESC
+LIMIT 1;
+
+8
+SELECT species, SUM(count) as total_abundance 
+FROM abundance 
+WHERE sample_id NOT IN (
+  SELECT sample_id FROM metadata 
+  WHERE metadata_column_name = 'disease' 
+  AND metadata_variable_content = 'healthy')
+GROUP BY species 
+ORDER BY total_abundance DESC 
+LIMIT 1;
+
+9
+SELECT species, SUM(count) as abundance
+FROM abundance
+WHERE sample_id NOT IN (
+    SELECT sample_id
+    FROM metadata
+    WHERE metadata_column_name = 'disease'
+      AND metadata_variable_content = 'healthy'
+)
+GROUP BY species
+ORDER BY abundance DESC
+LIMIT 10;
+
+10
+This query actually requires additional information about which metadata variable indicates whether a sample is "healthy" or "non-healthy". Assuming that the metadata column "disease" indicates the health status and "non-healthy" in this column corresponds to samples that are not healthy, here is the SQL query:
+
+SELECT species, SUM(count) AS total_count
+FROM abundance
+WHERE sample_id IN (
+        SELECT sample_id
+        FROM metadata
+        WHERE metadata_column_name = 'disease'
+        AND metadata_variable_content != 'healthy'
+)
+GROUP BY species
+ORDER BY total_count DESC
+LIMIT 10;
+
+This query selects the count of each species in all non-healthy samples in the metadata table, groups them by species name, and orders them in descending order by total count. It then limits the output to the top 10 most abundant species.;
+
